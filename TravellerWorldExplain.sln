@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravellerWorldExplain", "TravellerWorldExplain\TravellerWorldExplain.csproj", "{AFD63F8C-E1FB-494A-ABB8-CB08FE81EFED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravellerWorldExplainTests", "TravellerWorldExplainTests\TravellerWorldExplainTests.csproj", "{0AB7704B-ED3A-4432-96A3-F87C185C8343}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{AFD63F8C-E1FB-494A-ABB8-CB08FE81EFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFD63F8C-E1FB-494A-ABB8-CB08FE81EFED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AFD63F8C-E1FB-494A-ABB8-CB08FE81EFED}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0AB7704B-ED3A-4432-96A3-F87C185C8343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB7704B-ED3A-4432-96A3-F87C185C8343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB7704B-ED3A-4432-96A3-F87C185C8343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB7704B-ED3A-4432-96A3-F87C185C8343}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
