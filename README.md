@@ -8,6 +8,10 @@ Just because it seems like an interesting idea.
 Get the basic I/O in place, screen layout - done!
 ### Phase 2
 Get the "explain" button to work:
+* tests:
+  * each field is in a proper range
+  * all fields filled out
+  * NOTE: will require a world model, UI binding
 * classic trade codes
 * expand out on the stats and what they mean
 ### Phase 3
