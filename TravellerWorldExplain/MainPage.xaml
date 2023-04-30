@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TravellerWorldExplain.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center"
+                    MaxLength="1" />
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalTextAlignment="Center"
+                    MaxLength="1" />
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    HorizontalTextAlignment="Center"
+                    MaxLength="1" />
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    HorizontalTextAlignment="Center"
+                    MaxLength="3" />
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    HorizontalTextAlignment="Center"
+                    MaxLength="4" />
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="5"
+                    HorizontalTextAlignment="Center"
+                    MaxLength="1" />
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="6"
+                    HorizontalTextAlignment="Center"
+                    MaxLength="1" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="7"
+                    HorizontalTextAlignment="Center"
+                    Text="-"
+                    VerticalTextAlignment="Center" />
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="8"
+                    HorizontalTextAlignment="Center"
+                    MaxLength="1" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center"
+                    Text="Port" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center"
+                    Text="Size" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center"
+                    Text="Atmo" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center"
+                    Text="Hydro" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="4"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center"
+                    Text="Pop" />
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="5"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center"
+                    Text="Law" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="6"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center"
+                    Text="Govt" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="8"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center"
+                    Text="Tech" />
+            </Grid>
+
+            <Image
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="globe.png" />
+
+
+            <Button
+                x:Name="CounterBtn"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Explain" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
