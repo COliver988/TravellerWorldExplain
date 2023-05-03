@@ -44,10 +44,10 @@
                     <Entry.Behaviors>
                         <toolkit:TextValidationBehavior
                             Flags="ValidateOnValueChanged"
-                            RegexPattern="^[0-9, A-Z]*$"
                             InvalidStyle="{StaticResource InvalidEntryStyle}"
                             MaximumLength="1"
                             MinimumLength="1"
+                            RegexPattern="^[A-E, X]*$"
                             ValidStyle="{StaticResource ValidEntryStyle}" />
                     </Entry.Behaviors>
                 </Entry>
