@@ -5,6 +5,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
+    <ContentPage.Resources>
+        <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+        <Style x:Key="ValidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Green" />
+        </Style>
+    </ContentPage.Resources>
+
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
@@ -31,8 +40,17 @@
                 <Entry
                     Grid.Row="0"
                     Grid.Column="0"
-                    HorizontalTextAlignment="Center"
-                    MaxLength="1" />
+                    HorizontalTextAlignment="Center">
+                    <Entry.Behaviors>
+                        <toolkit:TextValidationBehavior
+                            Flags="ValidateOnValueChanged"
+                            RegexPattern="^[0-9, A-Z]*$"
+                            InvalidStyle="{StaticResource InvalidEntryStyle}"
+                            MaximumLength="1"
+                            MinimumLength="1"
+                            ValidStyle="{StaticResource ValidEntryStyle}" />
+                    </Entry.Behaviors>
+                </Entry>
                 <Entry
                     Grid.Row="0"
                     Grid.Column="1"
