@@ -4,7 +4,6 @@ namespace TravellerWorldExplain.Models
 {
     internal class Worlds
     {
-        [RegularExpression("A|B", ErrorMessage = "The Gender must be either 'M' or 'F' only.")]
         public string Starport { get; set; }
         public string Size { get; set; }
         public string Atmosphere { get; set; }
