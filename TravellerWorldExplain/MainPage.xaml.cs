@@ -60,7 +60,7 @@ public partial class MainPage : ContentPage
         int size = int.Parse(world.Size, System.Globalization.NumberStyles.HexNumber);
         int atmo = int.Parse(world.Atmosphere, System.Globalization.NumberStyles.HexNumber);
         string atmosphere = Atmospheres[atmo].ToString();
-        this.ExplainLbl.Text = $"Size: {size * 1000} km diameter\nAtmosphere: {atmosphere}";
+        world.Explanation = $"Size: {size * 1000} km diameter\nAtmosphere: {atmosphere}";
     }
 
     private bool ValidateWorld(Worlds world)

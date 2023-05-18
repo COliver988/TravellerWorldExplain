@@ -157,7 +157,7 @@
                 SemanticProperties.Hint="Give an explanation on the UWP"
                 Text="Explain" />
 
-            <Label x:Name="ExplainLbl" />
+            <Label x:Name="ExplainLbl" Text="{Binding Explanation, Mode=OneWay}" />
 
         </VerticalStackLayout>
     </ScrollView>
