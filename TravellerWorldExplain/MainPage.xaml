@@ -55,12 +55,14 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     HorizontalTextAlignment="Center"
-                    MaxLength="1" />
+                    MaxLength="1"
+                    Text="{Binding Size}" />
                 <Entry
                     Grid.Row="0"
                     Grid.Column="2"
                     HorizontalTextAlignment="Center"
-                    MaxLength="1" />
+                    MaxLength="1"
+                    Text="{Binding Atmosphere}" />
                 <Entry
                     Grid.Row="0"
                     Grid.Column="3"
@@ -148,13 +150,14 @@
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 Source="globe.png" />
 
-
             <Button
-                x:Name="CounterBtn"
-                Clicked="OnCounterClicked"
+                x:Name="ExplainBtn"
+                Clicked="ExplainClicked"
                 HorizontalOptions="Center"
-                SemanticProperties.Hint="Counts the number of times you click"
+                SemanticProperties.Hint="Give an explanation on the UWP"
                 Text="Explain" />
+
+            <Label x:Name="ExplainLbl" />
 
         </VerticalStackLayout>
     </ScrollView>
