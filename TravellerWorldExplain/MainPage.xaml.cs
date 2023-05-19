@@ -1,11 +1,9 @@
 ﻿using TravellerWorldExplain.Models;
-using Windows.Devices.HumanInterfaceDevice;
 
 namespace TravellerWorldExplain;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
     public string[] Atmospheres;
 
     public async Task<string[]> LoadData(string filePath)

@@ -34,7 +34,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition />
+                    <RowDefinition Height="35" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Entry
@@ -147,7 +147,7 @@
             <Image
                 HeightRequest="200"
                 HorizontalOptions="Center"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                SemanticProperties.Description="world image"
                 Source="globe.png" />
 
             <Button
