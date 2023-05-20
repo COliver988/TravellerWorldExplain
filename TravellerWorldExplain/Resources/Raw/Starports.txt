@@ -1,0 +1,6 @@
+﻿A - Excellent quality, refined fuel, starship manufacturing
+B - Good quality, unrefined fuel, starship maintenance
+C - Routine quality, unrefined fuel, small craft repair
+D - Poor quality, unrefined fuel, limited maintenance
+E - Frontier quality, no fuel or repairs
+X - No Starport

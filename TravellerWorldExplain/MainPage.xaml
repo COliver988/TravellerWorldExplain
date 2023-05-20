@@ -40,7 +40,8 @@
                 <Entry
                     Grid.Row="0"
                     Grid.Column="0"
-                    HorizontalTextAlignment="Center">
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Starport}">
                     <Entry.Behaviors>
                         <toolkit:TextValidationBehavior
                             Flags="ValidateOnValueChanged"
@@ -67,22 +68,26 @@
                     Grid.Row="0"
                     Grid.Column="3"
                     HorizontalTextAlignment="Center"
-                    MaxLength="3" />
+                    MaxLength="3"
+                    Text="{Binding Hydrographics}" />
                 <Entry
                     Grid.Row="0"
                     Grid.Column="4"
                     HorizontalTextAlignment="Center"
-                    MaxLength="4" />
+                    MaxLength="4"
+                    Text="{Binding Population}" />
                 <Entry
                     Grid.Row="0"
                     Grid.Column="5"
                     HorizontalTextAlignment="Center"
-                    MaxLength="1" />
+                    MaxLength="1"
+                    Text="{Binding Government}" />
                 <Entry
                     Grid.Row="0"
                     Grid.Column="6"
                     HorizontalTextAlignment="Center"
-                    MaxLength="1" />
+                    MaxLength="1"
+                    Text="{Binding LawLevel}" />
                 <Label
                     Grid.Row="0"
                     Grid.Column="7"
@@ -93,7 +98,8 @@
                     Grid.Row="0"
                     Grid.Column="8"
                     HorizontalTextAlignment="Center"
-                    MaxLength="1" />
+                    MaxLength="1"
+                    Text="{Binding TechLevel}" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
@@ -129,13 +135,13 @@
                     Grid.Column="5"
                     FontSize="10"
                     HorizontalTextAlignment="Center"
-                    Text="Law" />
+                    Text="Govt" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="6"
                     FontSize="10"
                     HorizontalTextAlignment="Center"
-                    Text="Govt" />
+                    Text="Law" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="8"

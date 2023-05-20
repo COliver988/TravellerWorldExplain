@@ -54,9 +54,12 @@
 	  <None Remove="Resources\Raw\Atmospheres.txt" />
 	  <None Remove="Resources\Raw\CTTradeCodes.txt" />
 	  <None Remove="Resources\Raw\Governments.txt" />
+	  <None Remove="Resources\Raw\LawLevels.txt" />
 	  <None Remove="Resources\Raw\MTTradeCodes.txt" />
 	  <None Remove="Resources\Raw\PortModifier.txt" />
+	  <None Remove="Resources\Raw\Starports.txt" />
 	  <None Remove="Resources\Raw\T5TradeCodes.txt" />
+	  <None Remove="Resources\Raw\TechLevels.txt" />
 	  <None Remove="Resources\Raw\TLModifier.txt" />
 	</ItemGroup>
 

@@ -5,6 +5,10 @@ namespace TravellerWorldExplain;
 public partial class MainPage : ContentPage
 {
     public string[] Atmospheres;
+    public string[] Starports;
+    public string[] Governments;
+    public string[] LawLevels;
+    public string[] TechLevels;
 
     public async Task<string[]> LoadData(string filePath)
     {
@@ -36,6 +40,10 @@ public partial class MainPage : ContentPage
     public async Task LoadDefaultData()
     {
         Atmospheres = await LoadData("Atmospheres.txt");
+        Governments = await LoadData("Governments.txt");
+        Starports = await LoadData("Starports.txt");
+        LawLevels = await LoadData("LawLevels.txt");
+        TechLevels = await LoadData("TechLevels.txt");
     }
 
     private void ExplainClicked(object sender, EventArgs e)
@@ -55,10 +63,33 @@ public partial class MainPage : ContentPage
 
     private void ExplainWorld(Worlds world)
     {
+        List<string> explanation = new List<string>();
+        explanation.Add(LoadPortDefinition(world.Starport[0]));
         int size = int.Parse(world.Size, System.Globalization.NumberStyles.HexNumber);
+        explanation.Add($"Size: {size * 1000} km diameter");
         int atmo = int.Parse(world.Atmosphere, System.Globalization.NumberStyles.HexNumber);
-        string atmosphere = Atmospheres[atmo].ToString();
-        world.Explanation = $"Size: {size * 1000} km diameter\nAtmosphere: {atmosphere}";
+        explanation.Add($"Atmosphere: {Atmospheres[atmo].ToString()}");
+        int hydro = int.Parse(world.Hydrographics, System.Globalization.NumberStyles.HexNumber);
+        explanation.Add($"Hydrographics: {hydro * 10}% +/- 5%");
+        int pop = int.Parse(world.Population, System.Globalization.NumberStyles.HexNumber);
+        explanation.Add($"Population: {Math.Pow(10, pop)}");
+        int govt = int.Parse(world.Government, System.Globalization.NumberStyles.HexNumber);
+        explanation.Add($"Government: {Governments[govt].ToString()}");
+        int law = int.Parse(world.LawLevel, System.Globalization.NumberStyles.HexNumber);
+        explanation.Add($"Law Level: {LawLevels[law].ToString()}");
+        int tech = int.Parse(world.TechLevel, System.Globalization.NumberStyles.HexNumber);
+        explanation.Add($"Tech Level: {TechLevels[law].ToString()}");
+        world.Explanation = string.Join("\n", explanation.ToArray());
+    }
+
+    private string LoadPortDefinition(char starport)
+    {
+        foreach (string portDefinition in Starports)
+        {
+            if (portDefinition[0] == starport)
+                return portDefinition;
+        }
+        return "Starport definition not found";
     }
 
     private bool ValidateWorld(Worlds world)
