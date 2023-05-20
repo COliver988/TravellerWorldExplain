@@ -14,6 +14,9 @@ Get the "explain" button to work:
   * NOTE: will require a world model, UI binding
 * classic trade codes
 * expand out on the stats and what they mean
+
+**Partially done** explain button expands the UWP and all is databound and works
+
 ### Phase 3
 * basic trade stuff - cargo, freight, passengers
 ### Phase 4
