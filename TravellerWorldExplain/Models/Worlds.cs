@@ -14,7 +14,7 @@ namespace TravellerWorldExplain.Models
         private string _government;
         private string _lawlevel;
         private string _techlevel;
-        private List<string> _explanation;
+        private string _explanation;
 
         public string Starport
         { 
@@ -58,7 +58,7 @@ namespace TravellerWorldExplain.Models
         }
 
         [NotMapped]
-        public List<string> Explanation
+        public string Explanation
         {
             get => _explanation;
             set => SetProperty(ref _explanation, value);

@@ -64,24 +64,24 @@ public partial class MainPage : ContentPage
 
     private void ExplainWorld(Worlds world)
     {
-        world.Explanation = new List<string>();
         List<string> explanation = new List<string>();
         explanation.Add(LoadPortDefinition(world.Starport[0]));
         int size = int.Parse(world.Size, System.Globalization.NumberStyles.HexNumber);
-        explanation.Add($"\nSize: {size * 1000} km diameter");
+        explanation.Add($"Size: {size * 1000} km diameter");
         int atmo = int.Parse(world.Atmosphere, System.Globalization.NumberStyles.HexNumber);
-        explanation.Add($"\nAtmosphere: {Atmospheres[atmo].ToString()}");
+        explanation.Add($"Atmosphere: {Atmospheres[atmo].ToString()}");
         int hydro = int.Parse(world.Hydrographics, System.Globalization.NumberStyles.HexNumber);
-        explanation.Add($"\nHydrographics: {hydro * 10}% +/- 5%");
+        explanation.Add($"Hydrographics: {hydro * 10}% +/- 5%");
         int pop = int.Parse(world.Population, System.Globalization.NumberStyles.HexNumber);
-        explanation.Add($"\nPopulation: {Math.Pow(10, pop)}");
+        explanation.Add($"Population: {Math.Pow(10, pop)}");
         int govt = int.Parse(world.Government, System.Globalization.NumberStyles.HexNumber);
-        explanation.Add($"\nGovernment: {Governments[govt].ToString()}");
+        explanation.Add($"Government: {Governments[govt].ToString()}");
         int law = int.Parse(world.LawLevel, System.Globalization.NumberStyles.HexNumber);
-        explanation.Add($"\nLaw Level: {LawLevels[law].ToString()}");
+        explanation.Add($"Law Level: {LawLevels[law].ToString()}");
         int tech = int.Parse(world.TechLevel, System.Globalization.NumberStyles.HexNumber);
-        explanation.Append($"\nTech Level: {TechLevels[tech].ToString()}");
-        world.Explanation = new List<string> { string.Join("\n", explanation.ToArray()), LoadTradeCodes(world) };
+        explanation.Add($"Tech Level: {TechLevels[tech].ToString()}");
+        explanation.Add(LoadTradeCodes(world));
+        world.Explanation = string.Join("\n", explanation.ToArray());
     }
 
     private string LoadTradeCodes(Worlds world)

@@ -16,7 +16,7 @@
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="20,0"
+            Padding="30,0"
             Spacing="25"
             VerticalOptions="Center">
 
@@ -163,20 +163,7 @@
                 SemanticProperties.Hint="Give an explanation on the UWP"
                 Text="Explain" />
 
-            <CarouselView
-                HeightRequest="700"
-                ItemsLayout="HorizontalList"
-                ItemsSource="{Binding Explanation}">
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame HasShadow="True">
-                            <StackLayout>
-                                <Label Text="{Binding .}" />
-                            </StackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
+            <Label HeightRequest="600" Text="{Binding Explanation}" />
 
         </VerticalStackLayout>
     </ScrollView>
