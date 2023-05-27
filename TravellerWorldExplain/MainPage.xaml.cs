@@ -34,7 +34,7 @@ public partial class MainPage : ContentPage
     public MainPage()
 	{
 		InitializeComponent();
-		this.BindingContext = new Worlds();
+		this.BindingContext = new World();
         _ = LoadDefaultData();
 	}
 
@@ -49,7 +49,7 @@ public partial class MainPage : ContentPage
 
     private void ExplainClicked(object sender, EventArgs e)
     {
-		Worlds world = (Worlds)this.BindingContext;
+		World world = (World)this.BindingContext;
 		if (world == null)
 		{
 			DisplayAlert("Traveller World Explainer Error", "World is not set", "OK");
@@ -62,7 +62,7 @@ public partial class MainPage : ContentPage
 			ExplainWorld(world);
     }
 
-    private void ExplainWorld(Worlds world)
+    private void ExplainWorld(World world)
     {
         List<string> explanation = new List<string>();
         explanation.Add(LoadPortDefinition(world.Starport[0]));
@@ -84,7 +84,7 @@ public partial class MainPage : ContentPage
         world.Explanation = string.Join("\n", explanation.ToArray());
     }
 
-    private string LoadTradeCodes(Worlds world)
+    private string LoadTradeCodes(World world)
     {
         return "trade codes here";
     }
@@ -99,7 +99,7 @@ public partial class MainPage : ContentPage
         return "Starport definition not found";
     }
 
-    private bool ValidateWorld(Worlds world)
+    private bool ValidateWorld(World world)
     {
 		return true;
     }

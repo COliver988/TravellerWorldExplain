@@ -1,10 +1,12 @@
-﻿using Nogginbox.MyApp.ViewModels;
+﻿using Microsoft.Maui.Platform;
+using Nogginbox.MyApp.ViewModels;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.RegularExpressions;
 
 namespace TravellerWorldExplain.Models
 {
-    internal class Worlds : ObservableViewModelBase
+    public class World : ObservableViewModelBase
     {
         private string _starport;
         private string _size;
@@ -16,6 +18,23 @@ namespace TravellerWorldExplain.Models
         private string _techlevel;
         private string _explanation;
 
+        public World() { }
+
+        // assumes A123456-7 formatting
+        public World(string UWP = null)
+        {
+            if (!string.IsNullOrEmpty(UWP))
+            {
+                _starport = UWP[0].ToString();
+                _size = UWP[1].ToString();
+                _atmosphere = UWP[2].ToString();
+                _hydrographics = UWP[3].ToString();
+                _population = UWP[4].ToString();
+                _government = UWP[5].ToString();
+                _lawlevel = UWP[6].ToString();
+                _techlevel = UWP[8].ToString();
+            }
+        }
         public string Starport
         { 
             get => _starport;
@@ -62,6 +81,16 @@ namespace TravellerWorldExplain.Models
         {
             get => _explanation;
             set => SetProperty(ref _explanation, value);
+        }
+
+        public bool Is_Valid()
+        {
+            Regex starportRange = new Regex("^[A-F, X]+$");
+            if (string.IsNullOrEmpty(this._starport))
+                return false;
+            if (!starportRange.IsMatch(this._starport))
+                return false;
+            return true;
         }
     }
 }
