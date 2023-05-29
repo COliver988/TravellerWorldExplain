@@ -54,7 +54,7 @@ public partial class MainPage : ContentPage
 		{
 			DisplayAlert("Traveller World Explainer Error", "World is not set", "OK");
 		}
-		else if (!ValidateWorld(world))
+		else if (!world.Is_Valid())
 		{
 			DisplayAlert("Traveller World Explainer Error", "World is not valid", "OK");
 		}

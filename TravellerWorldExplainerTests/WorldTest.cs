@@ -1,5 +1,3 @@
-using TravellerWorldExplain;
-using NUnit.Framework;
 using TravellerWorldExplain.Models;
 
 namespace TravellerWorldExplainerTests
@@ -12,48 +10,27 @@ namespace TravellerWorldExplainerTests
         [SetUp]
         public void Setup()
         {
-            world = new World();
         }
 
         [Test]
         [TestCase("A123456-7")]
+        [TestCase("B987AAA-F")]
         [TestCase("C123456-7")]
-        public void World_Validation(string UWP)
+        [TestCase("AAAAAAA-A")]
+        public void World_Is_Valid(string UWP)
         {
             world = new World(UWP);
-            if (string.IsNullOrEmpty(UWP))
-            {
-                Assert.IsFalse(world.Is_Valid());
-            }
-            else if (world.Starport == "Z")
-            {
-                Assert.IsFalse(world.Is_Valid());
-            }
-            else
-            {
-                Assert.IsTrue(world.Is_Valid());
-            }
+            Assert.That(world.Is_Valid());
         }
 
         [Test]
         [TestCase(null)]
         [TestCase("Z123456-7")]
+        [TestCase("A123456-K")]
         public void World_Is_Invalid(string UWP)
         {
             world = new World(UWP);
-            if (string.IsNullOrEmpty(UWP))
-            {
-                Assert.IsFalse(world.Is_Valid());
-            }
-            else if (world.Starport == "Z")
-            {
-                Assert.IsFalse(world.Is_Valid());
-            }
-            else
-            {
-                Assert.IsTrue(world.Is_Valid());
-            }
-
+            Assert.That(world.Is_Valid(), Is.False);
         }
     }
 }

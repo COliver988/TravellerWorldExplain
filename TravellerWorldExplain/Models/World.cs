@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Platform;
-using Nogginbox.MyApp.ViewModels;
-using System.ComponentModel.DataAnnotations;
+﻿using Nogginbox.MyApp.ViewModels;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.RegularExpressions;
 
@@ -21,9 +19,10 @@ namespace TravellerWorldExplain.Models
         public World() { }
 
         // assumes A123456-7 formatting
+        // TODO: need to verify input if not null!
         public World(string UWP = null)
         {
-            if (!string.IsNullOrEmpty(UWP))
+            if (!string.IsNullOrEmpty(UWP) && UWP.Length == 9)
             {
                 _starport = UWP[0].ToString();
                 _size = UWP[1].ToString();
@@ -86,9 +85,40 @@ namespace TravellerWorldExplain.Models
         public bool Is_Valid()
         {
             Regex starportRange = new Regex("^[A-F, X]+$");
+            Regex worldRange = new Regex("^[A-F0-9]+$");
+            Regex hydroRange = new Regex("^[0-9, A]+$");
+            Regex techRange = new Regex("^[0-9A-H]+$");
             if (string.IsNullOrEmpty(this._starport))
                 return false;
             if (!starportRange.IsMatch(this._starport))
+                return false;
+            if (string.IsNullOrEmpty(this._size))
+                return false;
+            if (!worldRange.IsMatch(this._size))
+                return false;
+            if (string.IsNullOrEmpty(this._atmosphere))
+                return false;
+            if (!worldRange.IsMatch(this._atmosphere))
+                return false;
+            if (string.IsNullOrEmpty(this._hydrographics))
+                return false;
+            if (!hydroRange.IsMatch(this._hydrographics))
+                return false;
+            if (string.IsNullOrEmpty(this._population))
+                return false;
+            if (!worldRange.IsMatch(this._population))
+                return false;
+            if (string.IsNullOrEmpty(this._government))
+                return false;
+            if (!worldRange.IsMatch(this._government))
+                return false;
+            if (string.IsNullOrEmpty(this._lawlevel))
+                return false;
+            if (!worldRange.IsMatch(this._lawlevel))
+                return false;
+            if (string.IsNullOrEmpty(this._techlevel))
+                return false;
+            if (!techRange.IsMatch(this._techlevel))
                 return false;
             return true;
         }
