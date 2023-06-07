@@ -9,6 +9,7 @@ namespace TravellerWorldExplain.Services
         private string[] _governments;
         private string[] _lawLevels;
         private string[] _techLevels;
+        private string[] _tradeCodes;
 
         public WorldService() => LoadDefaultData();
 
@@ -46,25 +47,32 @@ namespace TravellerWorldExplain.Services
 
         private string LoadTradeCodes(World world)
         {
-            return "trade codes here";
+            string results = "";
+            foreach (string code in _tradeCodes)
+            {
+                string[] info = code.Split(new char[] { ' ', ',' });
+                string tc = info[0];  // trade code
+                string desc = info[1];
+            }
+            return results;
         }
-        private async Task<string[]> LoadData(string filePath)
+        private async Task<string[]> LoadData(string fileName)
         {
-            // Open the source file
-            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(filePath);
+            if (fileName == "CTTradeCodes.txt")
+            {
+                var hello = "hi!";
+            }
+            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(fileName);
             using StreamReader reader = new StreamReader(fileStream);
 
-            // Create a list to store the lines
-            List<string> lines = new List<string>();
+            List<string> lines = new();
 
-            // Read the file line by line and add to the list
             string line;
             while ((line = reader.ReadLine()) != null)
             {
-                lines.Add(line);
+                if (line[0] != '#') lines.Add(line);
             }
 
-            // Convert the list to an array and return it
             return lines.ToArray();
         }
 
@@ -75,6 +83,7 @@ namespace TravellerWorldExplain.Services
             _starports = await LoadData("Starports.txt");
             _lawLevels = await LoadData("LawLevels.txt");
             _techLevels = await LoadData("TechLevels.txt");
+            _tradeCodes = await LoadData("CTTradeCodes.txt");
         }
     }
 

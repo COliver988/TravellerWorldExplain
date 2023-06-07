@@ -1,12 +1,12 @@
 # CT trade classifications
-
+#
 # 2 character code<space>description,size,Atm,Hyd,Pop,Gov,Law,TL,cost effect (purchase)
 # to figure it out, just read through the list
 # and and that match ('-' means not applicable)
 # the criteria are valid
-
+#
 # if an additional field is given, it is tech
-
+#
 Ag agricultural,-,456789,45678,567,-,-,-,0
 As Asteroid,0,-,-,-,-,-,-,0
 De Desert,-,123456789A,0,-,-,-,-,0
