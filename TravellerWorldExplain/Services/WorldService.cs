@@ -53,15 +53,54 @@ namespace TravellerWorldExplain.Services
                 string[] info = code.Split(new char[] { ' ', ',' });
                 string tc = info[0];  // trade code
                 string desc = info[1];
+                bool isValidTC = true;
+                for (int i = 2; i < info.Count(); i++)
+                {
+                    if (info[i] == "-")
+                        continue;
+                    switch (i)
+                    {
+                        case 2:
+                            if (!info[i].Contains(world.Size))
+                                isValidTC = false;
+                            break;
+                        case 3:
+                            if (!info[i].Contains(world.Atmosphere))
+                                isValidTC = false;
+                            break;
+                        case 4:
+                            if (!info[i].Contains(world.Hydrographics))
+                                isValidTC = false;
+                            break;
+                        case 5:
+                            if (!info[i].Contains(world.Population))
+                                isValidTC = false;
+                            break;
+                        case 6:
+                            if (!info[i].Contains(world.Government))
+                                isValidTC = false;
+                            break;
+                        case 7:
+                            if (!info[i].Contains(world.LawLevel))
+                                isValidTC = false;
+                            break;
+                        case 8:
+                            if (!info[i].Contains(world.TechLevel))
+                                isValidTC = false;
+                            break;
+                        default:
+                            break;
+                    }
+                    if (!isValidTC)
+                        break;
+                }
+                if (isValidTC)
+                    results += tc + ' ';
             }
             return results;
         }
         private async Task<string[]> LoadData(string fileName)
         {
-            if (fileName == "CTTradeCodes.txt")
-            {
-                var hello = "hi!";
-            }
             using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(fileName);
             using StreamReader reader = new StreamReader(fileStream);
 
