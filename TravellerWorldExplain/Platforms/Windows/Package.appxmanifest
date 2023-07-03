@@ -6,7 +6,7 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity Name="TravellerWorldExplainer" Publisher="CN=coliv" Version="0.0.0.0" />
+  <Identity Name="TravellerWorldExplainer" Publisher="CN=coliv" Version="0.0.6.0" />
 
   <mp:PhoneIdentity PhoneProductId="9E62C0B0-393D-4BF2-971C-D96C4689804C" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

@@ -1,4 +1,5 @@
 using TravellerWorldExplain.Models;
+using TravellerWorldExplain.Services;
 
 namespace TravellerWorldExplainerTests
 {
@@ -6,6 +7,7 @@ namespace TravellerWorldExplainerTests
     public class WorldTests
     {
         private World world;
+        private WorldService worldService = new WorldService();
 
         [SetUp]
         public void Setup()

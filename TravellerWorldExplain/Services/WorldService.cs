@@ -31,7 +31,7 @@ namespace TravellerWorldExplain.Services
             explanation.Add($"Law Level: {_lawLevels[law].ToString()}");
             int tech = int.Parse(world.TechLevel, System.Globalization.NumberStyles.HexNumber);
             explanation.Add($"Tech Level: {_techLevels[tech].ToString()}");
-            explanation.Add(LoadTradeCodes(world));
+            explanation.Add(string.Join(", ", LoadTradeCodes(world)));
             return explanation;
         }
 
@@ -45,9 +45,9 @@ namespace TravellerWorldExplain.Services
             return "Starport definition not found";
         }
 
-        private string LoadTradeCodes(World world)
+        public List<string> LoadTradeCodes(World world)
         {
-            string results = "";
+            List<string> results = new();
             foreach (string code in _tradeCodes)
             {
                 string[] info = code.Split(new char[] { ' ', ',' });
@@ -95,7 +95,7 @@ namespace TravellerWorldExplain.Services
                         break;
                 }
                 if (isValidTC)
-                    results += tc + ' ';
+                    results.Add($"{tc} {desc}");
             }
             return results;
         }

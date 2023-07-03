@@ -15,6 +15,7 @@ namespace TravellerWorldExplain.Models
         private string _lawlevel;
         private string _techlevel;
         private string _explanation;
+        private List<string> _tradeCodes;
 
         public World() { }
 
@@ -82,12 +83,20 @@ namespace TravellerWorldExplain.Models
             set => SetProperty(ref _explanation, value);
         }
 
+        [NotMapped]
+        public List<string> tradeCodes
+        {
+            get => _tradeCodes;
+            set => SetProperty(ref _tradeCodes, value);
+        }
+
         public bool Is_Valid()
         {
             Regex starportRange = new Regex("^[A-F, X]+$");
             Regex worldRange = new Regex("^[A-F0-9]+$");
             Regex hydroRange = new Regex("^[0-9, A]+$");
             Regex techRange = new Regex("^[0-9A-H]+$");
+            Regex lawRange = new Regex("^[0-9]+$");
             if (string.IsNullOrEmpty(this._starport))
                 return false;
             if (!starportRange.IsMatch(this._starport))
@@ -110,7 +119,7 @@ namespace TravellerWorldExplain.Models
                 return false;
             if (string.IsNullOrEmpty(this._government))
                 return false;
-            if (!worldRange.IsMatch(this._government))
+            if (!lawRange.IsMatch(this._lawlevel))
                 return false;
             if (string.IsNullOrEmpty(this._lawlevel))
                 return false;

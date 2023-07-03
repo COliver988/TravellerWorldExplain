@@ -87,7 +87,17 @@
                     Grid.Column="6"
                     HorizontalTextAlignment="Center"
                     MaxLength="1"
-                    Text="{Binding LawLevel}" />
+                    Text="{Binding LawLevel}">
+                    <Entry.Behaviors>
+                        <toolkit:TextValidationBehavior
+                            Flags="ValidateOnValueChanged"
+                            InvalidStyle="{StaticResource InvalidEntryStyle}"
+                            MaximumLength="1"
+                            MinimumLength="1"
+                            RegexPattern="^[0-9]*$"
+                            ValidStyle="{StaticResource ValidEntryStyle}" />
+                    </Entry.Behaviors>
+                </Entry>
                 <Label
                     Grid.Row="0"
                     Grid.Column="7"
@@ -156,13 +166,23 @@
                 SemanticProperties.Description="world image"
                 Source="globe.png" />
 
-            <Button
-                x:Name="ExplainBtn"
-                Clicked="ExplainClicked"
+            <HorizontalStackLayout
+                Margin="20"
                 HorizontalOptions="Center"
-                SemanticProperties.Hint="Give an explanation on the UWP"
-                Text="Explain" />
-
+                Spacing="10">
+                <Button
+                    x:Name="ExplainBtn"
+                    Clicked="ExplainClicked"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Give an explanation on the UWP"
+                    Text="Explain" />
+                <Button
+                    x:Name="Passengers"
+                    Clicked="PassengerClick"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Calculate Passengers"
+                    Text="Passengers" />
+            </HorizontalStackLayout>
             <Label HeightRequest="600" Text="{Binding Explanation}" />
 
         </VerticalStackLayout>

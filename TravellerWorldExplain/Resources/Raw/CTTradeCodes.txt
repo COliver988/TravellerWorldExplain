@@ -7,14 +7,14 @@
 #
 # if an additional field is given, it is tech
 #
-Ag agricultural,-,456789,45678,567,-,-,-,0
+Ag Agricultural,-,456789,45678,567,-,-,-,0
 As Asteroid,0,-,-,-,-,-,-,0
 De Desert,-,123456789A,0,-,-,-,-,0
 Ic Ice capped,-,01,123456789A,-,-,-,-,0
 In Industrial,-,012479,-,9ABC,-,-,-,0
-Na non-agricultural,-,0123,0123,6789ABC,-,-,-,0
-Ni non-industrial,-,-,-,123456,-,-,-,0
-Po poor,-,2345,0123,-,-,-,-,0
-Ri rich,-,68,-,678,456789,-,-,0
-Va vacuum,-,0,-,-,-,-,-,0
+Na Non-agricultural,-,0123,0123,6789ABC,-,-,-,0
+Ni Non-industrial,-,-,-,123456,-,-,-,0
+Po Poor,-,2345,0123,-,-,-,-,0
+Ri Rich,-,68,-,678,456789,-,-,0
+Va Vacuum,-,0,-,-,-,-,-,0
 Wa Water world,-,-,A,-,-,-,-,0
