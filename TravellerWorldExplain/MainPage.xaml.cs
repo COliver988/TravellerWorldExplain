@@ -1,12 +1,14 @@
 ﻿using System.Text;
 using TravellerWorldExplain.Models;
 using TravellerWorldExplain.Services;
+using TravellerWorldExplainer.Services;
 
 namespace TravellerWorldExplain;
 
 public partial class MainPage : ContentPage
 {
-    public WorldService worldService;
+    private WorldService worldService;
+	private PassengerService passengerService;
 	private World _world;
 
     public MainPage()
@@ -15,6 +17,7 @@ public partial class MainPage : ContentPage
 		_world = new World();
 		this.BindingContext = _world;
         worldService = new WorldService();
+		passengerService = new PassengerService();
 	}
 
 	private bool validateWorld()
@@ -43,15 +46,25 @@ public partial class MainPage : ContentPage
     private void ExplainWorld(World world)
     {
         List<string> explanation = worldService.explainWorld(world);
-        world.Explanation = string.Join("\n", explanation.ToArray());
+        _world.Explanation = string.Join("\n", explanation.ToArray());
     }
 
-    private void PassengerClick(object sender, EventArgs e)
+    private async void PassengerClick(object sender, EventArgs e)
     {
-		if (validateWorld())
+        if (validateWorld())
 		{
-			ExplainWorld(_world);
+			int destinationPop = await getDestinationPopulationAsync();
+			List<string> population = passengerService.LoadPassengers(_world, destinationPop);
+			_world.Explanation = string.Join("\n", population.ToArray());
 		}
+    }
+
+	private async Task<int> getDestinationPopulationAsync()
+	{
+		int pop = 0;
+		string result = await DisplayPromptAsync("Query", "Destination system population", "OK");
+		int.TryParse(result, out pop);
+		return pop;
     }
 }
 

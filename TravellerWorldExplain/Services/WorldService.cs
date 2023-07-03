@@ -1,8 +1,9 @@
 ﻿using TravellerWorldExplain.Models;
+using TravellerWorldExplainer.Services;
 
 namespace TravellerWorldExplain.Services
 {
-    public class WorldService
+    public class WorldService :TravellerServiceBase
     {
         private string[] _atmospheres;
         private string[] _starports;
@@ -99,22 +100,6 @@ namespace TravellerWorldExplain.Services
             }
             return results;
         }
-        private async Task<string[]> LoadData(string fileName)
-        {
-            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(fileName);
-            using StreamReader reader = new StreamReader(fileStream);
-
-            List<string> lines = new();
-
-            string line;
-            while ((line = reader.ReadLine()) != null)
-            {
-                if (line[0] != '#') lines.Add(line);
-            }
-
-            return lines.ToArray();
-        }
-
         private async Task LoadDefaultData()
         {
             _atmospheres = await LoadData("Atmospheres.txt");
