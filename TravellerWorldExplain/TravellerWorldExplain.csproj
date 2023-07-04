@@ -64,6 +64,7 @@
     <None Remove="Resources\Images\globe.png" />
     <None Remove="Resources\Raw\AllianceCodes.txt" />
     <None Remove="Resources\Raw\Atmospheres.txt" />
+    <None Remove="Resources\Raw\CTFreight.txt" />
     <None Remove="Resources\Raw\CTPassengers.txt" />
     <None Remove="Resources\Raw\CTTradeCodes.txt" />
     <None Remove="Resources\Raw\Governments.txt" />

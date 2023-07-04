@@ -29,6 +29,8 @@ namespace TravellerWorldExplainer.Services
                    default:
                         break;
                 }
+                if (passengerCount < 0)
+                    passengerCount = 0;
                 passengers.Add($"{passengerTypes[i]} {passengerCount}");
             }
 

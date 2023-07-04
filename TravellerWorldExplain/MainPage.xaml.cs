@@ -9,6 +9,7 @@ public partial class MainPage : ContentPage
 {
     private WorldService worldService;
 	private PassengerService passengerService;
+	private FreightService freightService;
 	private World _world;
 
     public MainPage()
@@ -18,6 +19,7 @@ public partial class MainPage : ContentPage
 		this.BindingContext = _world;
         worldService = new WorldService();
 		passengerService = new PassengerService();
+		freightService = new FreightService();
 	}
 
 	private bool validateWorld()
@@ -65,6 +67,16 @@ public partial class MainPage : ContentPage
 		string result = await DisplayPromptAsync("Query", "Destination system population", "OK");
 		int.TryParse(result, out pop);
 		return pop;
+    }
+
+    private async void FreightClick(object sender, EventArgs e)
+    {
+        if (validateWorld())
+		{
+			int destinationPop = await getDestinationPopulationAsync();
+			List<string> freight = freightService.LoadFreight(_world, destinationPop);
+			_world.Explanation = string.Join("\n", freight.ToArray());
+		}
     }
 }
 

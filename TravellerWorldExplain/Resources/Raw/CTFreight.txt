@@ -1,0 +1,12 @@
+﻿# Classic Freight: Major, minor, incidental
+-,-,-
+1D-4,1D-4,-
+1D-2,1D-1,-
+1D-1,1D,-
+1D,1D+1,-
+1D+1,1D+2,-
+1D+2,1D+3,1D-3
+1D+3,1D+4,1D-3
+1D+4,1D+5,1D-2
+1D+5,1D+6,1D-1
+1D+6,1D+7,1D

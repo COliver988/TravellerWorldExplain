@@ -182,6 +182,12 @@
                     HorizontalOptions="Center"
                     SemanticProperties.Hint="Calculate Passengers"
                     Text="Passengers" />
+                <Button
+                    x:Name="Freight"
+                    Clicked="FreightClick"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Calculate Freight"
+                    Text="Freight" />
             </HorizontalStackLayout>
             <Label HeightRequest="600" Text="{Binding Explanation}" />
 
