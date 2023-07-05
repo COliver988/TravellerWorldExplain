@@ -1,7 +1,7 @@
 using TravellerWorldExplain.Models;
 using TravellerWorldExplain.Services;
 
-namespace TravellerWorldExplainerTests
+namespace TravellerWorldExplainerTests.Models
 {
     [TestFixture]
     public class WorldTests
@@ -16,9 +16,9 @@ namespace TravellerWorldExplainerTests
 
         [Test]
         [TestCase("A123456-7")]
-        [TestCase("B987AAA-F")]
+        [TestCase("B987AA9-F")]
         [TestCase("C123456-7")]
-        [TestCase("AAAAAAA-A")]
+        [TestCase("AAAAAA9-A")]
         public void World_Is_Valid(string UWP)
         {
             world = new World(UWP);

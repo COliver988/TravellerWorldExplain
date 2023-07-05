@@ -43,9 +43,11 @@ namespace TravellerWorldExplainer.Services
             bool isSubtract = dieRolls.Contains("-");
             Int32.TryParse(string.Concat(rolls[0].Where(char.IsDigit).ToArray()), out d1);
             if (rolls.Length == 2)
+            {
                 Int32.TryParse(string.Concat(rolls[1].Where(char.IsDigit).ToArray()), out d2);
-            if (rolls[1].Contains("D"))
-                d2 = rollDice(d2);
+                if (rolls[1].Contains("D"))
+                    d2 = rollDice(d2);
+            }
             int results = isSubtract ? rollDice(d1) - (d2) : rollDice(d1) + d2;
             if (results < 0)
                 return 0;
