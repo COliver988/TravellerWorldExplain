@@ -19,6 +19,9 @@ Get the "explain" button to work:
 
 ### Phase 3
 * basic trade stuff - cargo, freight, passengers
+  
+** done **
+
 ### Phase 4
 * see about using TravellerMap's APIs to allow users to search & load planets at will
 ### Phase 5
